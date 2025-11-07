@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Vionex — Photogrammétrie 3D{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Création de modèles 3D réalistes via photogrammétrie (objets, bâtiments, œuvres).{% endblock %}">
+  <meta property="og:site_name" content="Vionex">
+  <meta property="og:title" content="Vionex — Connecter le réel au numérique">
+  <meta name="twitter:title" content="Vionex — Connecter le réel au numérique">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon.ico') }}">
+<meta name="theme-color" content="#0a0b10">
+</head>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='assets/logo-vionex.jpg') }}" 
+             alt="Logo Vionex" 
+             class="brand__logo">
+        <div class="brand__text">
+          <span class="brand__name">Vionex</span>
+          <span class="brand__tagline">Connecter le réel au numérique</span>
+        </div>
+      </a>
+      <nav class="nav__links">
+        <a href="{{ url_for('index') }}#services">Services</a>
+        <a href="{{ url_for('index') }}#portfolio">Portfolio</a>
+        <a href="{{ url_for('index') }}#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <p>© 2025 Vionex — Tous droits réservés</p>
+    <p>
+      <a href="{{ url_for('mentions_legales') }}">Mentions légales</a> |
+      <a href="{{ url_for('politique_confidentialite') }}">Politique de confidentialité</a> |
+      <a href="{{ url_for('cgv') }}">CGV</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

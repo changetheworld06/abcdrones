@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+{% block title %}ABCDrones | Studio de photogrammétrie 3D{% endblock %}
+{% block meta_description %}Création de modèles 3D photoréalistes via photogrammétrie : scan d’objets, architectures, œuvres d’art. Formats GLTF/OBJ/FBX, optimisation Sketchfab & WebAR.{% endblock %}
+
+{% block head_extra %}
+  <!-- Mots-clés / auteur -->
+  <meta name="keywords" content="photogrammétrie, scan 3D, modèles 3D, Sketchfab, WebAR, jumeau numérique, numérisation, PBR">
+  <meta name="author" content="Studio Photogrammétrie">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Studio de Photogrammétrie">
+  <meta property="og:description" content="Modèles 3D réalistes pour vos projets e-commerce, industrie & patrimoine.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://votre-domaine.fr">
+  <meta property="og:image" content="https://votre-domaine.fr/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <!-- Données structurées (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Studio de Photogrammétrie",
+    "image": "https://abcdrones.fr/og-cover.jpg",
+    "url": "https://abcdrones.fr",
+    "telephone": "0650516367",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR",
+      "addressLocality": "Nice",
+      "postalCode": "06000"
+    },
+    "sameAs": [
+      "https://sketchfab.com/votre-profil",
+      "https://www.linkedin.com/in/votre-profil/"
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="blob" aria-hidden="true"></div>
+    <div class="container hero__wrap">
+      <div>
+        <span class="pill">Photogrammétrie & Scans 3D PBR</span>
+        <h1>Des modèles 3D <em>ultra-réalistes</em> prêts pour Sketchfab, WebAR et e-commerce</h1>
+        <p>Nous transformons vos objets, œuvres ou lieux en jumeaux numériques précis, optimisés en topologie et textures PBR (albedo, normal, roughness, AO). Livraison GLTF/GLB, OBJ/FBX, USDZ.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#contact">Obtenir un devis</a>
+          <a class="btn btn--ghost" href="#portfolio">Voir des exemples</a>
+        </div>
+        <div class="badgebar">
+          <span class="badge"><span class="dot"></span>Compatibilité Sketchfab</span>
+          <span class="badge"><span class="dot"></span>Optimisation Web (LOD & décimation)</span>
+          <span class="badge"><span class="dot"></span>Textures 4K/8K</span>
+        </div>
+      </div>
+      <div>
+        <!-- Remplace par un iframe Sketchfab -->
+        <div style="aspect-ratio:16/10; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.1); background:#0b0d18;">
+          <model-viewer
+            src="{{ url_for('static', filename='models/cuve.glb') }}"
+            alt="Modèle 3D d’une cuve incendie"
+            camera-controls
+            auto-rotate
+            auto-rotate-delay="2000"
+            auto-rotate-speed="0.3"
+            exposure="1.2"
+            shadow-intensity="1"
+            environment-image="neutral"
+            camera-orbit="0deg 75deg 2.5m"
+            field-of-view="35deg"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            style="width:100%; height:100%; background:radial-gradient(circle at 50% 50%, rgba(124,92,255,.15), transparent 70%);">
+          </model-viewer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <h2 class="section__title">Services</h2>
+    <p class="section__desc">
+      Photogrammétrie terrestre (au sol), aérienne (drone) et sous-marine (caisson/ROV).<br>
+      De l’objet au bâtiment : capture, reconstruction, retopologie, texturing PBR, UVs, optimisation.
+    </p>
+
+    <div class="cards">
+      <!-- Nouveaux services -->
+      <article class="card">
+        <h3>Photogrammétrie terrestre</h3>
+        <p>Captation au sol haute résolution pour objets, intérieurs et façades. Setup lumière maîtrisé, cibles/échelles si besoin.</p>
+      </article>
+
+      <article class="card">
+        <h3>Photogrammétrie aérienne (drone)</h3>
+        <p>Survols réglementaires pour toitures, sites, carrières, orthophotos et maillages précis. Plans de vol et LOD web.</p>
+      </article>
+
+      <article class="card">
+        <h3>Photogrammétrie sous-marine</h3>
+        <p>Prises de vue en caisson/ROV : épaves, structures immergées, inspection et conservation. Débruitage et colorimétrie.</p>
+      </article>
+
+      <!-- Services existants -->
+      <article class="card">
+        <h3>Scan d’objets produits</h3>
+        <p>Packshots 3D pour e-commerce, musées, design. Versions web & HQ.</p>
+      </article>
+
+      <article class="card">
+        <h3>Architecture & patrimoine</h3>
+        <p>Façades, intérieurs, sculptures. Ortho/meshes précis, drone si besoin.</p>
+      </article>
+
+      <article class="card">
+        <h3>Optimisation temps réel</h3>
+        <p>LOD, baking textures, atlasing, réduction polygones WebGL/AR/VR.</p>
+      </article>
+
+      <article class="card">
+        <h3>Intégration Sketchfab & WebAR</h3>
+        <p>Mise en ligne, annotations, matériaux, post-process, embed.</p>
+      </article>
+
+      <article class="card">
+        <h3>Nettoyage & retopologie</h3>
+        <p>Fix bruit/trous, UV non chevauchantes, normales cohérentes.</p>
+      </article>
+
+      <article class="card">
+        <h3>Conseil workflow</h3>
+        <p>Prises de vue, lumière, plateau, naming, archivage & sauvegardes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section__title">Réalisations</h2>
+      <p class="section__desc">Remplacez ces visuels par vos images/embeds.</p>
+      <div class="gallery" style="margin-top:18px">
+        <img class="g1" src="{{ url_for('static', filename='img/demo1.jpg') }}" alt="Modèle 3D d’un objet scanné">
+        <img class="g2" src="{{ url_for('static', filename='img/demo2.jpg') }}" alt="Statue scannée en photogrammétrie">
+        <img class="g3" src="{{ url_for('static', filename='img/demo3.jpg') }}" alt="Pièce mécanique scannée">
+        <img class="g2" src="{{ url_for('static', filename='img/demo4.jpg') }}" alt="Intérieur architectural">
+        <img class="g3" src="{{ url_for('static', filename='img/demo5.jpg') }}" alt="Œuvre d’art numérisée">
+        <img class="g1" src="{{ url_for('static', filename='img/demo6.jpg') }}" alt="Façade et textures PBR">
+      </div>
+    </div>
+  </section>
+
+  <!-- Process + Contact -->
+  <section id="process">
+    <div class="container grid-2">
+      <div>
+        <h2 class="section__title">Notre méthode</h2>
+        <p class="section__desc">Un processus clair, pensé pour la qualité et des délais courts.</p>
+        <div class="steps">
+          <div class="step"><div><h3>Brief & devis</h3><p>Objectifs, formats, contraintes. Réception des objets ou repérage.</p></div></div>
+          <div class="step"><div><h3>Capture & reconstruction</h3><p>Prises calibrées, HDR si besoin. Reconstruction dense & nettoyage.</p></div></div>
+          <div class="step"><div><h3>Retopo, UV & textures</h3><p>Retopologie, UVs propres, baking PBR (albedo/normal/roughness/AO) 4K/8K.</p></div></div>
+          <div class="step"><div><h3>Optimisation & livraison</h3><p>Décimation, LOD, atlasing. Livraison GLB/GLTF, OBJ/FBX, publication Sketchfab.</p></div></div>
+        </div>
+      </div>
+
+      <div class="contact" id="contact">
+        <h3>Devis express</h3>
+        <p>Décrivez votre besoin et recevez une estimation sous 24h.</p>
+        <form action="https://formspree.io/f/xxxxxxxx" method="POST">
+          <label>Votre nom
+            <input required type="text" name="name" placeholder="Nom Prénom">
+          </label>
+          <label>Email
+            <input required type="email" name="email" placeholder="vous@exemple.com">
+          </label>
+          <label>Type de projet
+            <select name="type">
+              <option>Scan d’objet</option>
+              <option>Architecture / Patrimoine</option>
+              <option>Optimisation temps réel</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea rows="5" name="message" placeholder="Décrivez l’objet, le nombre de modèles, les formats…"></textarea>
+          </label>
+          <button class="btn btn--primary" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
+  <section id="tarifs">
+    <div class="container">
+      <h2 class="section__title">Tarifs indicatifs</h2>
+      <p class="section__desc">Chaque projet est unique, voici une base pour vous situer.</p>
+      <div class="price">
+        <div class="plan">
+          <h3>Objet simple</h3>
+          <p class="section__desc">1 objet ≤ 20 cm, niveau détail standard</p>
+          <ul>
+            <li>À partir de 149 € HT</li>
+            <li>Textures 4K, format GLB + OBJ</li>
+            <li>Optimisation web (LOD)</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h3>Objet complexe</h3>
+          <p class="section__desc">Géométrie complexe ou matériau difficile</p>
+          <ul>
+            <li>À partir de 349 € HT</li>
+            <li>Textures 8K si nécessaire</li>
+            <li>Version temps réel + version HQ</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h3>Site / Architecture</h3>
+          <p class="section__desc">Devis sur mesure après repérage</p>
+          <ul>
+            <li>Journée prise de vue sur site</li>
+            <li>Ortho/mesh + livrables BIM/CGI</li>
+            <li>Publication Sketchfab incluse</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:10px; color:var(--muted)">Remises par volume et abonnements possibles pour catalogues produits.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section__title">FAQ</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Quels formats livrez-vous ?</h3>
+          <p>GLB/GLTF (web/AR), OBJ/FBX (3D DCC), USDZ (iOS), textures PNG/TIFF 4K/8K.</p>
+          <h3>Pouvez-vous gérer la confidentialité ?</h3>
+          <p>Oui, modèles privés, NDA, et hébergement restreint si nécessaire.</p>
+          <h3>Combien d’images pour un objet ?</h3>
+          <p>De 40 à 400+ selon la complexité, multi-angles, éclairage maîtrisé.</p>
+        </div>
+        <div>
+          <h3>Intégrez-vous sur mon site ?</h3>
+          <p>Oui, via embed Sketchfab ou viewer WebGL. Assistance technique incluse.</p>
+          <h3>Délais moyens</h3>
+          <p>De 48h (objet simple) à 2–3 semaines (site/architecture).</p>
+          <h3>Quels usages ?</h3>
+          <p>
+          E-commerce, configurateurs produits, musées, préservation du patrimoine, jeux vidéo, AR/VR,
+          inspection industrielle, architecture, ingénierie, immobilier, archéologie, 
+          cinéma/VFX, communication, prototypage, formation, jumeaux numériques, 
+          tourisme virtuel et documentation technique.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section>
+    <div class="container" style="text-align:center">
+      <h2 class="section__title">Parlons de votre projet</h2>
+      <p class="section__desc">Envoyez 3–5 photos de l’objet et recevez un avis technique + un devis.</p>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap">
+        <a class="btn btn--primary" href="mailto:abcdrones06@gmail.com">abcdrones06@gmail.com</a>
+        <a class="btn" href="tel:0650516367">06 50 51 63 67</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

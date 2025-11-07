@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abcdrones.fr/sitemap.xml
