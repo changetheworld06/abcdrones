@@ -5,3 +5,6 @@ __pycache__/
 .env
 static/models/*.glb
 !static/models/cuve-1k.glb
+static/models/cuve-work/
+!static/models/coquillage.glb
+!static/models/fleur.glb

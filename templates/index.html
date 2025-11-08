@@ -164,7 +164,18 @@
         field-of-view="35deg"
         style="width:100%; height:320px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:#0b0d18;">
       </model-viewer>
-        <img class="g2" src="{{ url_for('static', filename='img/demo2.jpg') }}" alt="Statue scannée en photogrammétrie">
+      <model-viewer
+      class="g2"
+      src="{{ url_for('static', filename='models/fleur.glb') }}"
+      alt="Fleur scannée en photogrammétrie"
+      camera-controls
+      auto-rotate
+      shadow-intensity="1"
+      environment-image="neutral"
+      camera-orbit="0deg 75deg 2.5m"
+      field-of-view="35deg"
+      style="width:100%; height:320px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:#0b0d18;">
+    </model-viewer>
         <img class="g3" src="{{ url_for('static', filename='img/demo3.jpg') }}" alt="Pièce mécanique scannée">
         <img class="g2" src="{{ url_for('static', filename='img/demo4.jpg') }}" alt="Intérieur architectural">
         <img class="g3" src="{{ url_for('static', filename='img/demo5.jpg') }}" alt="Œuvre d’art numérisée">
