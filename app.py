@@ -28,3 +28,6 @@ def sitemap_xml():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5173)
+@app.route("/health")
+def health():
+    return "ok", 200
