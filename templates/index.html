@@ -146,43 +146,50 @@
   </div>
 </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <div class="container">
-      <h2 class="section__title">Réalisations</h2>
-      <p class="section__desc">Remplacez ces visuels par vos images/embeds.</p>
-      <div class="gallery" style="margin-top:18px">
+<section id="portfolio">
+  <div class="container">
+    <h2 class="section__title">Réalisations</h2>
+    <p class="section__desc">Exemples de modèles 3D capturés et optimisés.</p>
+
+    <div class="gallery">
+      <!-- Coquillage -->
+      <figure class="tile">
         <model-viewer
-        class="g1"
-        src="{{ url_for('static', filename='models/coquillage.glb') }}"
-        alt="Coquillage scanné en photogrammétrie"
-        camera-controls
-        auto-rotate
-        shadow-intensity="1"
-        environment-image="neutral"
-        camera-orbit="0deg 70deg 2.2m"
-        field-of-view="35deg"
-        style="width:100%; height:320px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:#0b0d18;">
-      </model-viewer>
-      <model-viewer
-      class="g2"
-      src="{{ url_for('static', filename='models/fleur.glb') }}"
-      alt="Fleur scannée en photogrammétrie"
-      camera-controls
-      auto-rotate
-      shadow-intensity="1"
-      environment-image="neutral"
-      camera-orbit="0deg 75deg 2.5m"
-      field-of-view="35deg"
-      style="width:100%; height:320px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:#0b0d18;">
-    </model-viewer>
-        <img class="g3" src="{{ url_for('static', filename='img/demo3.jpg') }}" alt="Pièce mécanique scannée">
-        <img class="g2" src="{{ url_for('static', filename='img/demo4.jpg') }}" alt="Intérieur architectural">
-        <img class="g3" src="{{ url_for('static', filename='img/demo5.jpg') }}" alt="Œuvre d’art numérisée">
-        <img class="g1" src="{{ url_for('static', filename='img/demo6.jpg') }}" alt="Façade et textures PBR">
-      </div>
+          src="{{ url_for('static', filename='models/coquillage-1k-draco.glb') }}"
+          alt="Coquillage scanné"
+          camera-controls
+          auto-rotate
+          reveal="auto">
+        </model-viewer>
+        <figcaption>Coquillage</figcaption>
+      </figure>
+
+      <!-- Fleur -->
+      <figure class="tile">
+        <model-viewer
+          src="{{ url_for('static', filename='models/fleur-1k-draco.glb') }}"
+          alt="Fleur séchée scannée"
+          camera-controls
+          auto-rotate
+          reveal="auto">
+        </model-viewer>
+        <figcaption>Fleur en pot</figcaption>
+      </figure>
+
+      <!-- Cuve -->
+      <figure class="tile">
+        <model-viewer
+          src="{{ url_for('static', filename='models/cuve-1k.glb') }}"
+          alt="Cuve incendie scannée"
+          camera-controls
+          auto-rotate
+          reveal="auto">
+        </model-viewer>
+        <figcaption>Cuve</figcaption>
+      </figure>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Process + Contact -->
   <section id="process">

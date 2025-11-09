@@ -4,7 +4,6 @@ __pycache__/
 .DS_Store
 .env
 static/models/*.glb
-!static/models/cuve-1k.glb
-static/models/cuve-work/
-!static/models/coquillage.glb
-!static/models/fleur.glb
+static/models/coquillage-1k-draco.glb
+static/models/fleur-1k-draco.glb
+static/models/cuve-1k.glb
