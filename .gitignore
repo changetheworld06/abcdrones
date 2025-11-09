@@ -6,4 +6,4 @@ __pycache__/
 static/models/*.glb
 static/models/coquillage.glb
 static/models/fleur.glb
-static/models/cuve-1k.glb
+static/models/cuve-1k.glbstatic/models/*-work/
